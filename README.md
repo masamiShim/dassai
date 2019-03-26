@@ -1,4 +1,6 @@
 # dassai
+## vuetify + typescript
+* [Qiitaより](https://qiita.com/Nossa/items/3860e55551697bb46e38#vuetify-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E8%BF%BD%E5%8A%A0)
 
 ## Project setup
 ```
