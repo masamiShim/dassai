@@ -26,8 +26,9 @@ import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
 
 @Component({
-    HelloWorld,
+    components: {
+        HelloWorld,
+    },
 })
-
-export default class App extends Vue {}
+export default class extends Vue {}
 </script>
