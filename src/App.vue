@@ -20,7 +20,7 @@
                             </v-subheader>
                         </v-flex>
                         <v-flex xs6 class="text-xs-center">
-                            <a href="#!" class="body-2 black--text">EDIT</a>
+                            <a href="#" class="body-2 black--text">EDIT</a>
                         </v-flex>
                     </v-layout>
                     <v-list-group
@@ -30,7 +30,7 @@
                             :prepend-icon="item.model ? item.icon : item['icon-alt']"
                             append-icon=""
                     >
-                        <template v-slot:activator>
+                        <template v-slot:activator="">
                             <v-list-tile>
                                 <v-list-tile-content>
                                     <v-list-tile-title>
@@ -109,47 +109,55 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+  import { Component, Vue } from 'vue-property-decorator';
+  import {
+    VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
+    VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction,
+    VFlex, VLayout, VSubheader, VListGroup, VListTileTitle, VListTileContent,
+  } from 'vuetify/lib';
+  import HelloWorld from '@/components/HelloWorld.vue';
 
-@Component({
-    components: {
-        HelloWorld,
-    },
-})
-export default class App extends Vue {
-    public drawer: boolean = false;
+  @Component({
+               components: {
+                 HelloWorld, VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
+                 VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
+                 VListGroup, VListTileTitle, VListTileContent,
+               },
+             })
+  export default class App extends Vue {
+
+    public drawer: any = null;
     public items: any[] = [
-        { icon: 'contacts', text: 'Contacts' },
-        { icon: 'history', text: 'Frequently contacted' },
-        { icon: 'content_copy', text: 'Duplicates' },
-        {
-            'icon': 'keyboard_arrow_up',
-            'icon-alt': 'keyboard_arrow_down',
-            'text': 'Labels',
-            'model': true,
-            'children': [
-                { icon: 'add', text: 'Create label' },
-            ],
-        },
-        {
-            'icon': 'keyboard_arrow_up',
-            'icon-alt': 'keyboard_arrow_down',
-            'text': 'More',
-            'model': false,
-            'children': [
-                { text: 'Import' },
-                { text: 'Export' },
-                { text: 'Print' },
-                { text: 'Undo changes' },
-                { text: 'Other contacts' },
-            ],
-        },
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'chat_bubble', text: 'Send feedback' },
-        { icon: 'help', text: 'Help' },
-        { icon: 'phonelink', text: 'App downloads' },
-        { icon: 'keyboard', text: 'Go to the old version' },
+      { icon: 'contacts', text: 'Contacts' },
+      { icon: 'history', text: 'Frequently contacted' },
+      { icon: 'content_copy', text: 'Duplicates' },
+      {
+        'icon': 'keyboard_arrow_up',
+        'icon-alt': 'keyboard_arrow_down',
+        'text': 'Labels',
+        'model': true,
+        'children': [
+          { icon: 'add', text: 'Create label' },
+        ],
+      },
+      {
+        'icon': 'keyboard_arrow_up',
+        'icon-alt': 'keyboard_arrow_down',
+        'text': 'More',
+        'model': false,
+        'children': [
+          { text: 'Import' },
+          { text: 'Export' },
+          { text: 'Print' },
+          { text: 'Undo changes' },
+          { text: 'Other contacts' },
+        ],
+      },
+      { icon: 'settings', text: 'Settings' },
+      { icon: 'chat_bubble', text: 'Send feedback' },
+      { icon: 'help', text: 'Help' },
+      { icon: 'phonelink', text: 'App downloads' },
+      { icon: 'keyboard', text: 'Go to the old version' },
     ];
-}
+  }
 </script>
