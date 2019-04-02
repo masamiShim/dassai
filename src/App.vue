@@ -54,7 +54,7 @@
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list-group>
-                    <v-list-tile v-else :key="item.text" @click="">
+                    <v-list-tile v-else :key="item.text" @click="transPage(item.path)">
                         <v-list-tile-action>
                             <v-icon>{{ item.icon }}</v-icon>
                         </v-list-tile-action>
@@ -109,36 +109,55 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+  import {Component, Vue} from 'vue-property-decorator';
   import {
-    VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
-    VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction,
-    VFlex, VLayout, VSubheader, VListGroup, VListTileTitle, VListTileContent,
+    VApp,
+    VAvatar,
+    VBtn,
+    VContent,
+    VFlex,
+    VIcon,
+    VLayout,
+    VList,
+    VListGroup,
+    VListTile,
+    VListTileAction,
+    VListTileContent,
+    VListTileTitle,
+    VNavigationDrawer,
+    VSpacer,
+    VSubheader,
+    VTextField,
+    VToolbar,
+    VToolbarSideIcon,
+    VToolbarTitle,
   } from 'vuetify/lib';
-  import HelloWorld from '@/components/HelloWorld.vue';
+  import HelloWorld from '@/components/Login.vue';
 
   @Component({
-               components: {
-                 HelloWorld, VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
-                 VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
-                 VListGroup, VListTileTitle, VListTileContent,
-               },
-             })
+    components: {
+      HelloWorld, VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
+      VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
+      VListGroup, VListTileTitle, VListTileContent,
+    },
+  })
   export default class App extends Vue {
 
     public drawer: any = null;
     public items: any[] = [
-      { icon: 'contacts', text: 'Contacts' },
-      { icon: 'history', text: 'Frequently contacted' },
-      { icon: 'content_copy', text: 'Duplicates' },
+      {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
+      {icon: 'contacts', text: 'Contacts', path: '/'},
+      {icon: 'history', text: 'Frequently contacted', path: '/'},
+      {icon: 'content_copy', text: 'Duplicates', path: '/'},
       {
         'icon': 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
         'text': 'Labels',
         'model': true,
         'children': [
-          { icon: 'add', text: 'Create label' },
+          {icon: 'add', text: 'Create label'},
         ],
+        'path': '/',
       },
       {
         'icon': 'keyboard_arrow_up',
@@ -146,18 +165,23 @@
         'text': 'More',
         'model': false,
         'children': [
-          { text: 'Import' },
-          { text: 'Export' },
-          { text: 'Print' },
-          { text: 'Undo changes' },
-          { text: 'Other contacts' },
+          {text: 'Import'},
+          {text: 'Export'},
+          {text: 'Print'},
+          {text: 'Undo changes'},
+          {text: 'Other contacts'},
         ],
+        'path': '/',
       },
-      { icon: 'settings', text: 'Settings' },
-      { icon: 'chat_bubble', text: 'Send feedback' },
-      { icon: 'help', text: 'Help' },
-      { icon: 'phonelink', text: 'App downloads' },
-      { icon: 'keyboard', text: 'Go to the old version' },
+      {icon: 'settings', text: 'Settings', path: '/'},
+      {icon: 'chat_bubble', text: 'Send feedback', path: '/'},
+      {icon: 'help', text: 'Help', path: '/'},
+      {icon: 'phonelink', text: 'App downloads', path: '/'},
+      {icon: 'keyboard', text: 'Go to the old version', path: '/'},
     ];
+
+    public transPage(path: string) {
+      this.$router.push(path);
+    }
   }
 </script>
