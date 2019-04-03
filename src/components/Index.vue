@@ -34,26 +34,26 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {
-  VBtn,
-  VCard,
-  VDivider,
-  VFlex,
-  VLayout,
-  VList,
-  VListTile,
-  VListTileAvatar,
-  VListTileSubTitle,
-  VListTileTitle,
-  VSpacer,
-  VSubheader,
-  VToolbar,
-  VToolbarSideIcon,
-  VToolbarTitle,
-} from 'vuetify/lib';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {
+    VBtn,
+    VCard,
+    VDivider,
+    VFlex,
+    VLayout,
+    VList,
+    VListTile,
+    VListTileAvatar,
+    VListTileSubTitle,
+    VListTileTitle,
+    VSpacer,
+    VSubheader,
+    VToolbar,
+    VToolbarSideIcon,
+    VToolbarTitle,
+  } from 'vuetify/lib';
 
-@Component({
+  @Component({
   components: {
     VLayout, VFlex, VCard, VToolbar, VToolbarSideIcon, VToolbarTitle, VSpacer, VBtn,
     VListTileTitle, VListTileSubTitle, VListTile, VDivider, VSubheader, VList, VListTileAvatar,
