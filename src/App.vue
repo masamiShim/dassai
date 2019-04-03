@@ -132,11 +132,10 @@
     VToolbarSideIcon,
     VToolbarTitle,
   } from 'vuetify/lib';
-  import HelloWorld from '@/components/Login.vue';
 
   @Component({
     components: {
-      HelloWorld, VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
+      VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
       VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
       VListGroup, VListTileTitle, VListTileContent,
     },

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Profile from './components/Profile.vue';
+import Home from '@/views/Home.vue';
+import Profile from '@/components/Profile.vue';
+import Index from '@/components/Index.vue';
 
 Vue.use(Router);
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/profile/edit',
       name: 'Profile',
       component: Profile,
+    },
+    {
+      path: '/index',
+      name: 'Index',
+      component: Index,
     },
   ],
 });
