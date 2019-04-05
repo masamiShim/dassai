@@ -1,12 +1,12 @@
 <template>
     <v-card
-            class="mx-auto elevation-20"
+            class="mx-auto elevation-20 mb-3"
             color="purple"
             dark
             style="max-width: 400px;"
     >
         <v-layout justify-space-between>
-            <v-flex xs8>
+            <v-flex xs8 sm6>
                 <v-card-title primary-title>
                     <div>
                         <div class="headline">Halycon Days</div>
@@ -44,10 +44,11 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {VCard, VCardActions, VCardTitle, VDivider, VFlex, VImg, VLayout, VRating, VSpacer} from 'vuetify/lib';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {VCard, VCardActions, VCardTitle, VDivider, VFlex, VImg, VLayout, VRating, VSpacer} from 'vuetify/lib';
 
-@Component({
+
+  @Component({
   components: {
     VCard, VCardActions, VRating, VDivider, VLayout, VSpacer,
     VFlex, VImg, VCardTitle,

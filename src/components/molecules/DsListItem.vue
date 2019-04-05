@@ -15,19 +15,19 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {
-  VDivider,
-  VList,
-  VListTile,
-  VListTileAvatar,
-  VListTileContent,
-  VListTileSubTitle,
-  VListTileTitle,
-  VSubheader,
-} from 'vuetify/lib';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {
+    VDivider,
+    VList,
+    VListTile,
+    VListTileAvatar,
+    VListTileContent,
+    VListTileSubTitle,
+    VListTileTitle,
+    VSubheader,
+  } from 'vuetify/lib';
 
-@Component({
+  @Component({
   components: {
     VListTile, VListTileContent, VListTileSubTitle, VListTileAvatar, VSubheader, VDivider,
     VListTileTitle, VList,

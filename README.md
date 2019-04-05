@@ -11,6 +11,9 @@ https://normalblog.net/system/lf_replaced_crlf/
 
 * regexpで1行当たりのmax-lengthエラー  
   lintのmax-lengthをfalse
+ 
+* 間隔の調整をしたい  
+https://windii.jp/frontend/nuxt/vuetify-tutorial#v-flex
 ## Project setup
 ```
 npm install
