@@ -103,6 +103,17 @@
             </v-btn>
         </v-toolbar>
         <router-view/>
+        <v-btn
+                color="pink"
+                dark
+                small
+                absolute
+                bottom
+                right
+                fab
+        >
+            <v-icon>camera_alt</v-icon>
+        </v-btn>
     </v-app>
 </template>
 

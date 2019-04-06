@@ -13,7 +13,12 @@ https://normalblog.net/system/lf_replaced_crlf/
   lintのmax-lengthをfalse
  
 * 間隔の調整をしたい  
-https://windii.jp/frontend/nuxt/vuetify-tutorial#v-flex
+https://windii.jp/frontend/nuxt/vuetify-tutorial#v-flex  
+1～5の範囲で
+    * padding →　p  
+    ex. pt-3 = padding-top
+    * margin →　m　  
+    ex. mb-3 = margin-bottom
 ## Project setup
 ```
 npm install

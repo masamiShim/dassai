@@ -7,7 +7,7 @@
                         height="200px"
                         src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
                 >
-                    <v-container fill-height fluid  align-center>
+                    <v-container fill-height fluid align-center>
                         <v-layout fill-height>
                             <v-flex xs12>
                                 <v-avatar
@@ -22,44 +22,37 @@
                         </v-layout>
                     </v-container>
                 </v-img>
-                <v-card-title>
-                    <div>
-                        <span class="grey--text">Number 10</span><br>
-                        <span>Whitehaven Beach</span><br>
-                        <span>Whitsunday Island, Whitsunday Islands</span>
-                    </div>
-                </v-card-title>
             </v-card>
         </v-flex>
         <v-layout row wrap>
             <v-flex xs3>
-                <v-card>
-                    <v-flex xs12>
-                        <v-icon large color="green darken-2">business</v-icon>
+                <v-card class="text-xs-center">
+                    <v-flex xs12 pb-3 pt-3>
+                        <v-icon large color="green darken-2">local_bar</v-icon>
                     </v-flex>
                     お気に入り:酒
                 </v-card>
             </v-flex>
             <v-flex xs3>
-                <v-card>
-                    <v-flex xs12>
-                        <v-icon large color="blue darken-2">chat</v-icon>
+                <v-card class="text-xs-center">
+                    <v-flex xs12 pb-3 pt-3>
+                        <v-icon large color="blue darken-2">place</v-icon>
                     </v-flex>
                     お気に入り:場所
                 </v-card>
             </v-flex>
             <v-flex xs3>
-                <v-card>
-                    <v-flex xs12>
-                        <v-icon large color="purple darken-2">dialpad</v-icon>
+                <v-card class="text-xs-center">
+                    <v-flex xs12 pb-3 pt-3>
+                        <v-icon large color="purple darken-2">face</v-icon>
                     </v-flex>
                     お気に入り:友達
                 </v-card>
             </v-flex>
             <v-flex xs3>
-                <v-card>
-                    <v-flex xs12>
-                        <v-icon large color="teal darken-2">email</v-icon>
+                <v-card class="text-xs-center">
+                    <v-flex xs12 pb-3 pt-3>
+                        <v-icon large color="teal darken-2">shopping_cart</v-icon>
                     </v-flex>
                     お酒を購入する
                 </v-card>
@@ -70,11 +63,11 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {VFlex} from 'vuetify/lib';
+import {VCard, VContainer, VFlex, VIcon, VImg, VLayout} from 'vuetify/lib';
 
 @Component({
   components: {
-    VFlex,
+    VFlex, VLayout, VCard, VIcon, VImg, VContainer,
   },
 })
 export default class DsTopProfile extends Vue {

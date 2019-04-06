@@ -37,11 +37,11 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {VCard, VCardActions, VCardTitle, VDivider, VFlex, VImg, VLayout, VRating, VSpacer} from 'vuetify/lib';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {VCard, VCardActions, VCardTitle, VDivider, VFlex, VImg, VLayout, VRating, VSpacer} from 'vuetify/lib';
 
 
-@Component({
+  @Component({
   components: {
     VCard, VCardActions, VRating, VDivider, VLayout, VSpacer,
     VFlex, VImg, VCardTitle,
