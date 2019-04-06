@@ -143,9 +143,11 @@
     public drawer: any = null;
     public items: any[] = [
       {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
-      {icon: 'contacts', text: 'Contacts', path: '/'},
+      {icon: 'contacts', text: '酒とも', path: '/'},
       {icon: 'history', text: 'Frequently contacted', path: '/'},
       {icon: 'content_copy', text: 'Duplicates', path: '/'},
+      {icon: 'chat_bubble', text: 'チャット', path: '/'},
+      {icon: 'settings', text: 'Settings', path: '/'},
       {
         'icon': 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
@@ -170,11 +172,8 @@
         ],
         'path': '/',
       },
-      {icon: 'settings', text: 'Settings', path: '/'},
-      {icon: 'chat_bubble', text: 'Send feedback', path: '/'},
       {icon: 'help', text: 'Help', path: '/'},
       {icon: 'phonelink', text: 'App downloads', path: '/'},
-      {icon: 'keyboard', text: 'Go to the old version', path: '/'},
     ];
 
     public transPage(path: string) {
