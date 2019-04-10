@@ -102,18 +102,19 @@
                 </v-avatar>
             </v-btn>
         </v-toolbar>
-        <router-view/>
-        <v-btn
-                color="pink"
-                dark
-                small
-                absolute
-                bottom
-                right
-                fab
-        >
-            <v-icon>camera_alt</v-icon>
-        </v-btn>
+        <router-view />
+        <v-flex class="mt-4">
+            <v-btn
+                    fab
+                    bottom
+                    right
+                    color="pink"
+                    dark
+                    fixed
+            >
+                <v-icon>camera_alt</v-icon>
+            </v-btn>
+        </v-flex>
     </v-app>
 </template>
 
@@ -155,8 +156,8 @@
     public items: any[] = [
       {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
       {icon: 'contacts', text: '酒とも', path: '/'},
-      {icon: 'history', text: 'Frequently contacted', path: '/'},
-      {icon: 'content_copy', text: 'Duplicates', path: '/'},
+      {icon: 'history', text: '酒アップロード', path: '/'},
+      {icon: 'content_copy', text: 'お気に入り', path: '/'},
       {icon: 'chat_bubble', text: 'チャット', path: '/'},
       {icon: 'settings', text: 'Settings', path: '/'},
       {

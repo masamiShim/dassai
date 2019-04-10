@@ -1,23 +1,22 @@
 <template>
     <v-form ref="form" lazy-validation>
-        <v-container>
+        <v-container fluid fill-height>
             <v-layout
                     justify-center
                     text-xs-center
                     wrap
+                    row
             >
                 <v-flex
                         xs12
                         sm10
                         md8
-                        lg6
                 >
                     <h2 class="headline font-weight-bold mb-3">Login Form</h2>
                 </v-flex>
                 <v-flex xs12
                         sm8
                         md8
-                        lg6
                 >
                     <v-text-field
                             v-model="email"
@@ -29,7 +28,6 @@
                 <v-flex xs12
                         sm8
                         md8
-                        lg6
                 >
                     <v-text-field
                             v-model="password"

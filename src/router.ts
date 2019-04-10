@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Profile from '@/components/Profile.vue';
 import Index from '@/components/Index.vue';
+import DsPostSake from '@/components/DsPostSake.vue';
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/index',
       name: 'Index',
       component: Index,
+    },
+    {
+      path: '/post/sake',
+      name: 'DsPostSake',
+      component: DsPostSake,
     },
   ],
 });
