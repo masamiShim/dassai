@@ -156,7 +156,7 @@
     public items: any[] = [
       {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
       {icon: 'contacts', text: '酒とも', path: '/'},
-      {icon: 'history', text: '酒アップロード', path: '/'},
+      {icon: 'history', text: '酒アップロード', path: '/post/sake'},
       {icon: 'content_copy', text: 'お気に入り', path: '/'},
       {icon: 'chat_bubble', text: 'チャット', path: '/'},
       {icon: 'settings', text: 'Settings', path: '/'},

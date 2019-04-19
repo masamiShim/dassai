@@ -1,64 +1,59 @@
 <template>
     <v-content>
-        <v-container fluid>
-            <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
-                <img :src="getImageSrc" height="150" v-show="getImageSrc"/>
-                <v-icon large dark class="teal" @click='pickFile'>folder_open</v-icon>
-                <input
-                        type="file"
-                        ref="image"
-                        style="display: none"
-                        accept="image/*"
-                        @change="onFilePicked"
-                >
-            </v-flex>
+        <v-container fluid class="mt-5">
+            <v-layout row wrap align-center>
+                <v-flex xs12 class="mb-4 text-xs-center">
+                    <h2>画像をアップロード</h2>
+                </v-flex>
+                <ds-file-uploader  @uploaded="uploaded()"/>
+                <v-flex xs12 class="mt-4 text-xs-center">
+                    <h2>感想</h2>
+                </v-flex>
+                <v-flex xs12 class="mt-4">
+                    <div class="text-xs-center mt-2">辛口　　　　←　 味 　→　　　　甘口</div>
+                    <v-rating
+                            class="text-xs-center"
+                            v-model="rating"
+                    ></v-rating>
+                </v-flex>
+                <v-flex xs6 offset-xs3 class="mt-4">
+                    <v-textarea
+                            outline
+                            label="コメント"
+                            v-model="impression"
+                    ></v-textarea>
+                </v-flex>
+                <v-flex xs12 class="text-xs-center">
+                    <v-btn depressed color="primary" @click="post">Info</v-btn>
+                </v-flex>
+            </v-layout>
         </v-container>
     </v-content>
 </template>
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import {VContainer, VContent, VFlex, VIcon} from 'vuetify/lib';
+  import {VContainer, VContent, VRating} from 'vuetify/lib';
+  import DsFileUploader from '@/components/atoms/DsFileUploader.vue';
 
   @Component({
   components: {
-    VContent, VContainer, VFlex, VIcon,
+    DsFileUploader, VContent, VContainer, VRating,
   },
 })
 export default class DsPostSake extends Vue {
-  private uploadedImage?: string | ArrayBuffer | null = null;
-  private imageName: string = '';
-  private imageFile: any | null = null;
+  public impression: string = '';
+  public rating: number = 0;
+  public imagePath: string = '';
 
-  get getImageSrc() {
-    return this.uploadedImage;
+  public uploaded(imagePath: string) {
+    this.imagePath = imagePath;
+    alert('uploaded');
   }
 
-  public pickFile() {
-    (this.$refs as any).image.click();
+  public post() {
+    alert('post');
   }
-
-  public onFilePicked(e: any) {
-    this.imageName = '';
-    this.imageFile = '';
-    this.uploadedImage = '';
-
-    const files = e.target.files || e.dataTransfer.files;
-    this.createImage(files[0]);
-  }
-
-  public createImage(file: any) {
-    if  (file !== undefined) {
-      const fr: FileReader = new FileReader();
-      fr.onload = (e: ProgressEvent) => {
-        this.uploadedImage = (e.target as any).result;
-        this.imageFile = file;
-        this.imageName = file.name;
-      };
-      fr.readAsDataURL(file);
-    }
-  }
-
 }
 </script>
 
