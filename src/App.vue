@@ -102,7 +102,9 @@
                 </v-avatar>
             </v-btn>
         </v-toolbar>
-        <router-view />
+        <v-content>
+            <router-view/>
+        </v-content>
         <v-flex class="mt-4">
             <v-btn
                     fab
@@ -142,54 +144,68 @@
     VToolbarSideIcon,
     VToolbarTitle,
   } from 'vuetify/lib';
+  import * as firebase from 'firebase/app';
 
   @Component({
-    components: {
-      VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
-      VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
-      VListGroup, VListTileTitle, VListTileContent,
+  components: {
+    VApp, VContent, VToolbar, VBtn, VAvatar, VIcon, VTextField, VToolbarSideIcon,
+    VToolbarTitle, VNavigationDrawer, VSpacer, VList, VListTile, VListTileAction, VFlex, VLayout, VSubheader,
+    VListGroup, VListTileTitle, VListTileContent,
+  },
+})
+export default class App extends Vue {
+
+  public drawer: any = null;
+  public items: any[] = [
+    {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
+    {icon: 'contacts', text: '酒とも', path: '/'},
+    {icon: 'history', text: '酒アップロード', path: '/post/sake'},
+    {icon: 'content_copy', text: 'お気に入り', path: '/'},
+    {icon: 'chat_bubble', text: 'チャット', path: '/'},
+    {icon: 'settings', text: 'Settings', path: '/'},
+    {
+      'icon': 'keyboard_arrow_up',
+      'icon-alt': 'keyboard_arrow_down',
+      'text': 'Labels',
+      'model': true,
+      'children': [
+        {icon: 'add', text: 'Create label'},
+      ],
+      'path': '/',
     },
-  })
-  export default class App extends Vue {
+    {
+      'icon': 'keyboard_arrow_up',
+      'icon-alt': 'keyboard_arrow_down',
+      'text': 'More',
+      'model': false,
+      'children': [
+        {text: 'Import'},
+        {text: 'Export'},
+        {text: 'Print'},
+        {text: 'Undo changes'},
+        {text: 'Other contacts'},
+      ],
+      'path': '/',
+    },
+    {icon: 'help', text: 'Help', path: '/'},
+    {icon: 'phonelink', text: 'App downloads', path: '/'},
+  ];
 
-    public drawer: any = null;
-    public items: any[] = [
-      {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
-      {icon: 'contacts', text: '酒とも', path: '/'},
-      {icon: 'history', text: '酒アップロード', path: '/post/sake'},
-      {icon: 'content_copy', text: 'お気に入り', path: '/'},
-      {icon: 'chat_bubble', text: 'チャット', path: '/'},
-      {icon: 'settings', text: 'Settings', path: '/'},
-      {
-        'icon': 'keyboard_arrow_up',
-        'icon-alt': 'keyboard_arrow_down',
-        'text': 'Labels',
-        'model': true,
-        'children': [
-          {icon: 'add', text: 'Create label'},
-        ],
-        'path': '/',
-      },
-      {
-        'icon': 'keyboard_arrow_up',
-        'icon-alt': 'keyboard_arrow_down',
-        'text': 'More',
-        'model': false,
-        'children': [
-          {text: 'Import'},
-          {text: 'Export'},
-          {text: 'Print'},
-          {text: 'Undo changes'},
-          {text: 'Other contacts'},
-        ],
-        'path': '/',
-      },
-      {icon: 'help', text: 'Help', path: '/'},
-      {icon: 'phonelink', text: 'App downloads', path: '/'},
-    ];
-
-    public transPage(path: string) {
-      this.$router.push(path);
-    }
+  public transPage(path: string) {
+    this.$router.push(path);
   }
+
+  public created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        localStorage.setItem('isAnonymous', JSON.stringify(user.isAnonymous));
+        localStorage.setItem('userId', user.uid);
+      } else {
+        localStorage.removeItem('isAnonymous');
+        localStorage.removeItem('userId');
+        this.$router.push('/login');
+      }
+    });
+  }
+}
 </script>

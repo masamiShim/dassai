@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home.vue';
+import Login from '@/components/Login.vue';
 import Profile from '@/components/Profile.vue';
 import Index from '@/components/Index.vue';
 import DsPostSake from '@/components/DsPostSake.vue';
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/',
+      name: 'Login',
+      component: Login,
     },
     {
       path: '/about',

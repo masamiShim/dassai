@@ -6,6 +6,8 @@ import store from './store';
 import Vuelidate from 'vuelidate';
 import './registerServiceWorker';
 import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 import FirebaseKey from './firebaseKey';
 
 Vue.config.productionTip = false;
