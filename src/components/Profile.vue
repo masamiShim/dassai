@@ -28,7 +28,7 @@
                         </div>
                     </v-flex>
                     <v-flex xs-12 class="mb-5">
-                        <img v-if="profileImage.getFileName" :src="currentImage"/>
+                        <img style="width: 200px; height: 200px;" v-show="!profileImage.file" :src="currentImage"/>
                         <ds-file-uploader @uploaded="handleUpload"/>
                     </v-flex>
                     <v-flex xs-12>
@@ -92,12 +92,12 @@ export default class Profile extends Vue {
     }
     localStorage.setItem('profile.name', this.name);
     localStorage.setItem('profile.email', this.email);
-    localStorage.setItem('profile.imageName', this.profileImage.getFileName);
+    localStorage.setItem('profile.imageName', this.profileImage.fileName);
     const userId = localStorage.getItem('userId');
     // データを格納するパスを指定
     const storageRef = firebase.storage().ref();
-    const ref = storageRef.child(`images/${userId}/profile/${this.profileImage.getFileName}`);
-    ref.put(this.profileImage.getFile)
+    const ref = storageRef.child(`images/${userId}/profile/${this.profileImage.fileName}`);
+    ref.put(this.profileImage.file)
       .then((snapshot) => {
         snapshot.ref.getDownloadURL().then((url) => {
           this.profileImage = new ImageFile(url, this.currentImage);
@@ -114,7 +114,11 @@ export default class Profile extends Vue {
     });
   }
 
-  public handleUpload(file: any) {
+  public handleUpload(file: any | null) {
+    if (!file) {
+      this.profileImage = new ImageFile(null, null);
+      return;
+    }
     this.profileImage = new ImageFile(file, file.name);
   }
 
