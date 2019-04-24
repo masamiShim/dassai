@@ -56,12 +56,12 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {VBtn, VContainer, VFlex, VForm, VLayout, VTextField} from 'vuetify/lib';
-import catalog from '@/api/Validations';
-import * as firebase from 'firebase/app';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {VBtn, VContainer, VFlex, VForm, VLayout, VTextField} from 'vuetify/lib';
+  import catalog from '@/api/Validations';
+  import * as firebase from 'firebase/app';
 
-@Component({
+  @Component({
   components: {
     VFlex, VLayout, VContainer, VForm, VTextField, VBtn,
   },

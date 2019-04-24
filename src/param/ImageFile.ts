@@ -1,18 +1,16 @@
 export default class ImageFile {
-  private file: any;
-  private fileName: string;
+  private readonly file: any | null;
+  private readonly fileName: string | null;
 
-  constructor(file: any) {
+  constructor(file: any, fileName: string) {
     this.file = file;
-    this.fileName = file.name;
+    this.fileName = fileName;
   }
-
-  public getFile() {
-    return this.file;
-  }
-
-  public getFileName() {
+  get getFileName(): string | null {
     return this.fileName;
+  }
+  get getFile(): any | null {
+    return this.file;
   }
 
 }

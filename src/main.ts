@@ -22,7 +22,8 @@ const config = {
   messagingSenderId: FirebaseKey.messagingSenderId,
 };
 
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
+export default firebaseApp.firestore();
 
 new Vue({
   router,
