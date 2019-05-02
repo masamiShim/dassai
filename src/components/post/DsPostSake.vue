@@ -10,7 +10,7 @@
                     <v-flex xs12 class="mb-4 text-xs-center">
                         <h2>画像をアップロード</h2>
                     </v-flex>
-                    <ds-file-uploader @uploaded="handleUpload"/>
+                    <ds-file-uploader :required="true" @uploaded="handleUpload"/>
                     <v-flex xs12 class="mt-4 text-xs-center">
                         <h2>感想</h2>
                     </v-flex>
@@ -39,14 +39,14 @@
 </template>
 
 <script lang="ts">
-import * as firebase from 'firebase';
-import {Component, Vue} from 'vue-property-decorator';
-import {VBtn, VContainer, VContent, VFlex, VForm, VLayout, VRating, VTextarea} from 'vuetify/lib';
-import catalog from '@/api/Validations';
-import DsFileUploader from '@/components/atoms/DsFileUploader.vue';
-import ImageFile from '../param/ImageFile';
+  import * as firebase from 'firebase';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {VBtn, VContainer, VContent, VFlex, VForm, VLayout, VRating, VTextarea} from 'vuetify/lib';
+  import catalog from '../../api/Validations';
+  import DsFileUploader from '../atoms/DsFileUploader.vue';
+  import ImageFile from '../../param/ImageFile';
 
-@Component({
+  @Component({
   components: {
     DsFileUploader, VContent, VContainer, VRating, VFlex, VTextarea, VLayout, VBtn, VForm,
   },

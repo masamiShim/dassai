@@ -92,7 +92,6 @@ export default class Profile extends Vue {
     }
     localStorage.setItem('profile.name', this.name);
     localStorage.setItem('profile.email', this.email);
-    localStorage.setItem('profile.imageName', this.profileImage.fileName);
     const userId = localStorage.getItem('userId');
     // データを格納するパスを指定
     const storageRef = firebase.storage().ref();
@@ -101,6 +100,7 @@ export default class Profile extends Vue {
       .then((snapshot) => {
         snapshot.ref.getDownloadURL().then((url) => {
           this.profileImage = new ImageFile(url, this.currentImage);
+          localStorage.setItem('profile.imageName', this.profileImage.fileName);
         });
         this.success = true;
         setTimeout(() => {

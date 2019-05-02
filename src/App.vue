@@ -78,18 +78,7 @@
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <span class="hidden-sm-and-down">Dassai</span>
             </v-toolbar-title>
-            <v-text-field
-                    flat
-                    solo-inverted
-                    hide-details
-                    prepend-inner-icon="search"
-                    label="Search"
-                    class="hidden-sm-and-down"
-            ></v-text-field>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>apps</v-icon>
-            </v-btn>
             <v-btn icon>
                 <v-icon>notifications</v-icon>
             </v-btn>
@@ -158,7 +147,7 @@ export default class App extends Vue {
   public drawer: any = null;
   public items: any[] = [
     {icon: 'edit', text: 'プロフィール', path: '/profile/edit'},
-    {icon: 'contacts', text: '酒とも', path: '/'},
+    {icon: 'contacts', text: '酒とも', path: '/friend/list'},
     {icon: 'history', text: '酒アップロード', path: '/post/sake'},
     {icon: 'content_copy', text: 'お気に入り', path: '/'},
     {icon: 'chat_bubble', text: 'チャット', path: '/'},

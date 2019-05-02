@@ -4,7 +4,8 @@ import Home from '@/views/Home.vue';
 import Login from '@/components/Login.vue';
 import Profile from '@/components/Profile.vue';
 import Index from '@/components/Index.vue';
-import DsPostSake from '@/components/DsPostSake.vue';
+import DsPostSake from '@/components/post/DsPostSake.vue';
+import DsFriendsList from '@/components/friends/DsFriendsList.vue';
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/post/sake',
       name: 'DsPostSake',
       component: DsPostSake,
+    },
+    {
+      path: '/friend/list',
+      name: 'DsFriendsList',
+      component: DsFriendsList,
     },
   ],
 });
